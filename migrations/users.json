@@ -1,0 +1,24 @@
+[
+    {
+        "status": true,
+        "_id": "605c19163bac7310fb16aabb",
+        "name": "Owner",
+        "email": "owner@gmail.com",
+        "phone": "09300300300",
+        "password": "$2b$10$r7B.CA1FFTnxwbjiN.ob8u5hm4LTPg4Bdbn5oL0Fa8vcyDBdVC.Du",
+        "created": "2021-03-25T05:01:10.732Z",
+        "updated": "2021-03-25T05:01:10.732Z",
+        "__v": 0
+    },
+    {
+        "status": true,
+        "_id": "605c19163bac7310fb16aabc",
+        "name": "Test",
+        "email": "test@gmail.com",
+        "phone": "09400400400",
+        "password": "$2b$10$r7B.CA1FFTnxwbjiN.ob8u5hm4LTPg4Bdbn5oL0Fa8vcyDBdVC.Du",
+        "created": "2021-03-25T05:01:10.761Z",
+        "updated": "2021-03-25T05:01:10.761Z",
+        "__v": 0
+    }
+]

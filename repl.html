@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Single Code</title>
+</head>
+
+<body>
+    <textarea type="text" id="inputF" rows=10 cols=60></textarea><br>
+    <button id="convert">Convert</button>
+    <p id="result"></p>
+    <button id="copy">Copy</button>
+
+    <script>
+        var convertBtn = document.querySelector("#convert");
+        var copyBtn = document.querySelector("#copy");
+        var inputField = document.querySelector("#inputF");
+        var result = document.querySelector("#result");
+
+        convertBtn.addEventListener('click', (e) => {
+            // var text = inputField.value.replace(/"/g, '\'');
+            var text = inputField.value.replace(/</g, '&lt;');
+            var text = inputField.value.replace(/>/g, '&tt;');
+            result.innerHTML = `<code><pre>${text}</pre></code>`;
+        });
+
+        copyBtn.addEventListener('click', (e) => {
+            copyDivToClipboard("result");
+        });
+
+
+        function copyDivToClipboard(elem) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(elem));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+
+</html>
+
+  
