@@ -92,7 +92,7 @@ let migrateTest = async () => {
     // await migrator.DataBackup();
     await migrator.DataMigrate();
 }
-// migrateTest();
+migrateTest();
 
 let rolePermitTest = async () => {
     let { UserRole } = require('./utils/facade');
