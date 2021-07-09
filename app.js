@@ -90,9 +90,9 @@ io.of("/chat").use(async (socket, next) => {
 let migrateTest = async () => {
     let migrator = require('./migrations/migrator');
     // await migrator.DataBackup();
-    await migrator.DataMigrate();
+    // await migrator.DataMigrate();
 }
-migrateTest();
+// migrateTest();
 
 let rolePermitTest = async () => {
     let { UserRole } = require('./utils/facade');

@@ -43,7 +43,8 @@ module.exports = {
             name: Joi.string().min(4).required(),
             email: Joi.string().min(9).required(),
             phone: Joi.string().regex(/^\d{7,11}$/).required(),
-            password: Joi.string().min(8).regex(regy).required(),
+            // password: Joi.string().min(8).regex(regy).required(),
+            password: Joi.string().min(8).required(),
             fcmtoken: Joi.string().optional()
         }),
         add: Joi.object({
@@ -105,9 +106,9 @@ module.exports = {
             warranty: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required(),
         }),
         orderSave: Joi.object({
-            user: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+            // user: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required(),
             total: Joi.number().required(),
-            biker: Joi.string().regex(/^[0-9a-fA-F]{24}$/).optional(),
+            // biker: Joi.string().regex(/^[0-9a-fA-F]{24}$/).optional(),
             items: Joi.array().required(),
         }),
     }
