@@ -23,7 +23,14 @@ router.get('/products/:skip?', validateParam(Schema.skip, 'skip'), async (req, r
 router.get('/product/:id', validateParam(Schema.id, 'id'), async (req, res) => await Rest.get(ProductModel, res, req.params.id));
 router.get('/appversion', async (req, res, next) => Helper.fMsg(res, 'App Version!', "1.0"));
 
-router.post("/order", [validateBody(Schema.orderSave), validateToken(), validateRole(role)], async (req, res) => await Order.add(req, res));
+// router.post("/order", async (req, res) => {
+    // console.log("Order Body",req.body);
+    // res.send({"con":"true"});
+// });
+router.post("/order", async (req, res) => await Order.add(req, res));
+// router.post("/order", [validateBody(Schema.orderSave), validateToken(), validateRole(role)], async (req, res) => await Order.add(req, res));
+
+
 router.get("/order/:id", validateParam(Schema.id, 'id'), async (req, res) => await Rest.get(OrderModel, res, req.params.id, 'items'));
 router.get("/userorder/:id", validateParam(Schema.id, 'id'), async (req, res) => await Rest.filter(OrderModel, res, { user: req.params.id }, 'items'));
 

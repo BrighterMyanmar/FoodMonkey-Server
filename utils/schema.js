@@ -17,8 +17,10 @@ module.exports = {
             otp: Joi.number().min(6).required()
         }),
         login: Joi.object({
-            phone: Joi.string().regex(/^\d{7,11}$/).required(),
-            password: Joi.string().min(8).regex(regy).required(),
+            // phone: Joi.string().regex(/^\d{7,11}$/).required(),
+            phone: Joi.string().min(7).max(11).required(),
+            password: Joi.string().min(8).required(),
+            // password: Joi.string().min(8).regex(regy).required(),
         }),
         role: Joi.object({
             name: Joi.string().required(),
@@ -42,10 +44,11 @@ module.exports = {
         register: Joi.object({
             name: Joi.string().min(4).required(),
             email: Joi.string().min(9).required(),
-            phone: Joi.string().regex(/^\d{7,11}$/).required(),
+            phone: Joi.string().min(7).max(11).required(),
+            // phone: Joi.string().regex(/^\d{7,11}$/).required(),
             // password: Joi.string().min(8).regex(regy).required(),
             password: Joi.string().min(8).required(),
-            fcmtoken: Joi.string().optional()
+            // fcmtoken: Joi.string().optional()
         }),
         add: Joi.object({
             name: Joi.string().min(4).required(),

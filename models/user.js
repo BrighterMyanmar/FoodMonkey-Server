@@ -63,7 +63,7 @@ UserSchema.statics.login = async function (data) {
                 resp.con = true;
                 resp.msg = "Login Success";
                 resp.result = userObj;
-            } else resp.msg = "Cridential Error";
+            }else console.log("Password Error!") //else resp.msg = "Cridential Error";
         } else resp.msg = "You are banned!";
     } else resp.msg = "Cridential Error";
     return resp;
